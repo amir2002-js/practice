@@ -21,8 +21,8 @@ export default class Counter extends Component {
 				<div className="w-8/12 h-[50%] bg-blue-200/20 border border-white rounded-lg absolute z-50 p-6 flex flex-col justify-evenly items-center">
 					{/* show count */}
 					<div className="flex flex-col justify-evenly items-center gap-4">
-						<p className="text-2xl font-bold">COUNTER:</p>
-						<p>{this.state.count}</p>
+						<p className="text-3xl font-bold">COUNTER:</p>
+						<p className="font-semibold text-lg">{this.state.count}</p>
 					</div>
 
 					{/* btn box */}
