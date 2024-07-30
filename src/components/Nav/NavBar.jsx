@@ -8,19 +8,25 @@ export default class NavBar extends Component {
 				<div className="container max-w-maxWidth ">
 					<ul className="flex gap-3 font-semibold">
 						<li>
-							<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-								<Link to="/">home</Link>
-							</button>
+							<Link to="/">
+								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
+									home
+								</button>
+							</Link>
 						</li>
 						<li>
-							<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-								<Link to="/counter">counter</Link>
-							</button>
+							<Link to="/counter">
+								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
+									counter
+								</button>
+							</Link>
 						</li>
 						<li>
-							<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-								<Link to="/form">form</Link>
-							</button>
+							<Link to="/form">
+								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
+									form
+								</button>
+							</Link>
 						</li>
 					</ul>
 				</div>
