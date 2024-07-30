@@ -28,6 +28,13 @@ export default class NavBar extends Component {
 								</button>
 							</Link>
 						</li>
+						<li>
+							<Link to="/question">
+								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
+									question
+								</button>
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</nav>
