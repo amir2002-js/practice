@@ -1,85 +1,64 @@
-import React from "react";
-import Notif from "./Notif";
+import { useState } from "react";
+import Input from "./Input";
 
-export default class Form extends React.Component {
-	constructor(props) {
-		super(props);
+export default function Form() {
+	const [firstName, setFN] = useState({val : "", placeholder : "first name", validate: true , id:0});
+	const [lastName, setLN] = useState({val : "", placeholder : "last name", validate: true , id:1});
+	const [email, setE] = useState({val : "", placeholder : "email", validate: true , id:2});
 
-		this.state = {
-			firsName: "",
-			lastName: "",
-			email: "",
-			valFN: "",
-			valLN: "",
-			valE: "",
-			valid: false,
-		};
-		this.subHandler.bind(this.subHandler);
-	}
-	subHandler(e) {
+	function inpHandler(e) {
 		e.preventDefault();
 		e.target[0].value.length > 2
-			? this.setState({ firstName: e.target[0].value, valFN: "true" })
-			: this.setState({ valFN: "false" });
+			? setFN({val: e.target[0].value , placeholder : "first name", validate: true , id:0})
+			:  setFN({val: "" , placeholder : "first name", validate: false , id:0})
 		e.target[1].value.length > 2
-			? this.setState({ lastName: e.target[1].value, valFN: "true" })
-			: this.setState({ valLN: "false" });
-		e.target[2].value.length > 12
-			? this.setState({ email: e.target[2].value, valFN: "true" })
-			: this.setState({ valE: "false" });
-
-		if (
-			this.state.valE === "true" &&
-			this.state.valFN === "true" &&
-			this.state.valE === "true"
-		) {
-			this.setState({ valid: true });
-			setTimeout(() => {
-				this.setState({ valid: false });
-			}, 3000);
-		}
+			? setLN({val : e.target[1].value, placeholder : "last name", validate: true , id:1})
+			: setLN({val : "", placeholder : "last name", validate: false , id:1})
+		e.target[2].value.length > 2
+			? setE({val : e.target[2].value, placeholder : "email", validate: true , id:2})
+			: setE({val : "", placeholder : "email", validate: false , id:2})
+		e.target[2].value = ""
+		e.target[1].value = ""
+		e.target[0].value = ""
 	}
 
-	render() {
-		return (
-			<div className="h-[100vh] bg-green-700 flex justify-center items-center">
-				
-				<div className="bg-white p-7 rounded-sm shadow flex justify-center items-stretch flex-col w-[400px]">
-					<form
-						action=""
-						className="flex flex-col gap-6"
-						onSubmit={(e) => this.subHandler(e)}
+	return (
+		<div className="h-[100vh] bg-green-700 flex justify-center items-center">
+			<div className="bg-white p-7 rounded-sm shadow flex justify-center items-stretch flex-col w-[400px]">
+				<form
+					action=""
+					className="flex flex-col gap-10"
+					onSubmit={inpHandler}
+				>
+					
+						<div className="relative" >
+							<Input placeholder={firstName.placeholder} />
+							{!firstName.validate? (<p className="absolute text-red-500 font-medium">
+								{`your ${firstName.placeholder} is not valid`}
+							</p>) : null}
+						</div>
+						<div className="relative" >
+							<Input placeholder={lastName.placeholder} />
+							{!lastName.validate? (<p className="absolute text-red-500 font-medium">
+								{`your ${lastName.placeholder} is not valid`}
+							</p>) : null}
+						</div>
+						<div className="relative" >
+							<Input placeholder={email.placeholder} />
+							{!email.validate? (<p className="absolute text-red-500 font-medium">
+								{`your ${email.placeholder} is not valid`}
+							</p>) : null}
+						</div>
+					
+					
+					<button
+						className="bg-green-700 text-white py-2 rounded-sm mt-5 hover:bg-white/0 hover:ring-4 ring-green-700 hover:text-black transition-all duration-300"
+						onSubmit={inpHandler}
 					>
-						<input
-							type="text"
-							name=""
-							id=""
-							placeholder="first name"
-							className="py-2 px-4 outline-none focus-visible:ring-[2px] ring-green-700 bg-slate-200 rounded-sm "
-						/>
-						<input
-							type="text"
-							name=""
-							id=""
-							placeholder="last name"
-							className="py-2 px-4 outline-none focus-visible:ring-[2px] ring-green-700 bg-slate-200 rounded-sm "
-						/>
-						<input
-							type="text"
-							name=""
-							id=""
-							placeholder="email"
-							className="py-2 px-4 outline-none focus-visible:ring-[2px] ring-green-700 bg-slate-200 rounded-sm "
-						/>
-						<button
-							className="bg-green-700 text-white py-2 rounded-sm mt-5"
-							onSubmit={this.subHandler}
-						>
-							submit
-						</button>
-					</form>
-				</div>
+						submit
+					</button>
+				</form>
 			</div>
-		);
-	}
+		</div>
+	);
 }
