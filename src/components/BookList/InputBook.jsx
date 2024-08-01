@@ -1,7 +1,9 @@
 
 export default function InputBook({ label}) {
 	return (
+		
 		<div className="flex flex-col gap-1.5">
+			{/* each one have a leable above the input that programmer can add it */}
 			<label className="text-slate-500 text-lg font-medium" htmlFor="">
 				{label}
 			</label>

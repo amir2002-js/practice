@@ -10,6 +10,7 @@ export default function BookList() {
 
 	function submitHandler(e) {
 		e.preventDefault();
+		// add to state list
 		if(e.target[2].value.length > 2 && e.target[1].value.length > 2 && e.target[0].value.length > 2){const oldData = [...data];
 		oldData.push( {
 			title: e.target[0].value,
@@ -22,7 +23,7 @@ export default function BookList() {
 
         setData(oldData);
 
-
+		// empty list
         e.target[2].value = ""
         e.target[1].value = ""
         e.target[0].value = ""
