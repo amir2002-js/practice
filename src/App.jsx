@@ -4,6 +4,7 @@ import Layout from "./Layout";
 import Form from "./components/Form/Form";
 import Questions from "./components/Questions/Questions";
 import BookList from "./components/BookList/BookList";
+import Shop from "./components/shopping/Shop";
 
 export const App = () => {
 	return (
@@ -14,6 +15,7 @@ export const App = () => {
 					<Route path="form" element={<Form />} />
 					<Route path="question" element={<Questions />} />
 					<Route path="book-list" element={<BookList />} />
+					<Route path="shop" element={<Shop />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
