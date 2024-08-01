@@ -1,6 +1,10 @@
 import Show from "./Show";
 
-export default function ShopCart({ data , setShoeses }) {
+export default function ShopCart({ data, setShoeses }) {
+	const x = data.filter((shoes) => {
+		return shoes.count > 0;
+	});
+
 	return (
 		<div className="container max-w-maxWidth">
 			<p className="font-extrabold text-white text-3xl text-center pt-16 pb-5">
@@ -14,21 +18,20 @@ export default function ShopCart({ data , setShoeses }) {
 				<p>remove</p>
 			</div>
 
-			{data.map((shoes, i) => {
-				if (shoes.count > 0) {
-					return (
-						<Show
-                        setShoeses={setShoeses}
-							data={data}
-							index={i}
-							price={shoes.price}
-							product={shoes.name}
-							imgUrl={shoes.url}
-							number={shoes.count}
-							key={shoes.id}
-						/>
-					);
-				}
+			{x.map((shoes, i) => {
+				return (
+					<Show
+						setShoeses={setShoeses}
+						data={data}
+						index={shoes.id}
+						i={i}
+						price={shoes.price}
+						product={shoes.name}
+						imgUrl={shoes.url}
+						number={shoes.count}
+						key={shoes.id}
+					/>
+				);
 			})}
 		</div>
 	);
