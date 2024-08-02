@@ -15,6 +15,13 @@ export default class NavBar extends Component {
 							</Link>
 						</li>
 						<li>
+							<Link to="/todo-list">
+								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
+								todo list
+								</button>
+							</Link>
+						</li>
+						<li>
 							<Link to="/shop">
 								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
 									shop
