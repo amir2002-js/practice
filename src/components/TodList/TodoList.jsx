@@ -1,16 +1,35 @@
+import Btn from "./Btn";
+import List from "./List";
 
 export default function TodoList() {
-  return (
-    <div className="bg-gray-800 min-h-[100vh] flex justify-center items-center gap-4">
-        <form action="" className="w-96 rounded outline-none flex justify-between items-center bg-violet-400 focus-visible:ring-4 ring-violet-600 font-medium mt-64">
-            <input type="text" className="w-full px-4 rounded py-2 outline-none bg-violet-400" />
-            <button>+</button>
-        </form>
-        <select name="" id="" className="px-4 py-2 rounded outline-none bg-violet-400 focus-visible:ring-4 ring-violet-600 font-medium mt-64">
-            <option className="bg-slate-200 " value="all">all</option>
-            <option className="bg-slate-100 " value="copmlate">copmlate</option>
-            <option className="bg-slate-200 " value="unComplate">unComplate</option>
-        </select>
-    </div>
-  )
+	return (
+		<div className="bg-slate-300 min-h-[100vh] flex justify-start items-center gap-4 flex-col relative ">
+			<div className="fixed top-[30%]  bg-slate-400 shadow-md shadow-black p-10 rounded-2xl ">
+				<form
+					action=""
+					className="flex flex-col justify-center items-center w-full gap-20"
+				>
+					<div className="flex flex-col justify-center items-center gap-5">
+						<label htmlFor="" className="font-semibold">add your job</label>
+						<input
+							type="text"
+							name=""
+							id=""
+							className=" w-[320px] outline-none focus-visible:ring-4 ring-slate-500 rounded-md px-4 py-1 shadow-lg shadow-black"
+						/>
+					</div>
+					<Btn>add</Btn>
+				</form>
+			</div>
+			<div className="container max-w-maxWidth mt-28 flex justify-between items-center z">
+				<Btn>add</Btn>
+
+				<select className="size-full bg-slate-800 rounded-md w-32 h-10 text-center  shadow-md shadow-black text-white font-semibold">
+					<option value="all">all</option>
+					<option value="complate">complate</option>
+					<option value="unComplate">unComplate</option>
+				</select>
+			</div>
+		</div>
+	);
 }

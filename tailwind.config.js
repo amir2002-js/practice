@@ -33,7 +33,8 @@ export default {
     },
 
     maxWidth:{
-      maxWidth: "1300px"
+      maxWidth: "1300px",
+      '100' : "400px"
     },
     extend: {},
   },
