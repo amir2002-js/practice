@@ -9,10 +9,10 @@ export default function TodoList() {
 	const [showInp, setShowInp] = useState(false);
 	const [filterBy, setFilterBy] = useState("all");
 
-	function changeTodo(newTodo){
-		newTodo.forEach((item , index) =>{
+	function changeTodo(newTodo) {
+		newTodo.forEach((item, index) => {
 			item.index = index;
-		})
+		});
 
 		setTodo(newTodo);
 	}
@@ -60,7 +60,8 @@ export default function TodoList() {
 											: 1,
 									index:
 										newTodo.length != 0
-											? newTodo[newTodo.length - 1].index + 1
+											? newTodo[newTodo.length - 1]
+													.index + 1
 											: 0,
 								});
 								changeTodo(newTodo);
