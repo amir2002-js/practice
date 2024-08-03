@@ -1,61 +1,89 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import Links from "./Links";
+import { CiCircleRemove, CiMenuBurger } from "react-icons/ci";
 
 export default class NavBar extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			link: [
+				{
+					address: "/",
+					title: "home",
+					id: 1,
+				},
+				{
+					address: "/form",
+					title: "form",
+					id: 2,
+				},
+				{
+					address: "/counter",
+					title: "counter",
+					id: 3,
+				},
+				{
+					address: "/shop",
+					title: "shop",
+					id: 4,
+				},
+				{
+					address: "/todo-list",
+					title: "todo list",
+					id: 5,
+				},
+				{
+					address: "/book-list",
+					title: "booklist",
+					id: 6,
+				},
+				{
+					address: "/question",
+					title: "question",
+					id: 7,
+				},
+				{
+					address: "/note-pad",
+					title: "note pad",
+					id: 7,
+				},
+			],
+			isOpen: false
+		};
+	}
 	render() {
 		return (
 			<nav className="fixed top-0 w-full p-3 z-50 bg-white/40">
 				<div className="container max-w-maxWidth ">
-					<ul className="flex items-center justify-between font-semibold">
-						<li>
-							<Link to="/">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-									home
-								</button>
-							</Link>
-						</li>
-						<li>
-							<Link to="/todo-list">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-								todo list
-								</button>
-							</Link>
-						</li>
-						<li>
-							<Link to="/shop">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-									shop
-								</button>
-							</Link>
-						</li>
-						<li>
-							<Link to="/counter">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-									counter
-								</button>
-							</Link>
-						</li>
-						<li>
-							<Link to="/form">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-									form
-								</button>
-							</Link>
-						</li>
-						<li>
-							<Link to="/question">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-									question
-								</button>
-							</Link>
-						</li>
-						<li>
-							<Link to="/book-list">
-								<button className="px-4 py-1 rounded-md hover:bg-slate-300 transition-all duration-200">
-									book list
-								</button>
-							</Link>
-						</li>
+					<button
+						onClick={() => {
+							this.setState({isOpen : !this.state.isOpen})
+							console.log(this.state);
+						}}
+						className="text-[36Px] p-3 hover:bg-slate-300 rounded-md"
+					>
+						<CiMenuBurger />
+					</button>
+					<ul className={`${this.state.isOpen?
+						"" : 
+						"-translate-x-64"} transition-all duration-300 flex flex-col gap-3 items-start p-2 font-semibold fixed bg-slate-50 h-screen top-0 left-0 w-64`}>
+						<button
+							onClick={() => {
+								this.setState({isOpen : false})
+								console.log(this.state);
+							}}
+							className="text-[36Px] p-3 hover:bg-slate-300 rounded-md text-end"
+						>
+							<CiCircleRemove />
+						</button>
+						{this.state.link.map((link) => (
+							<Links
+								to={link.address}
+								title={link.title}
+								key={link.id}
+							/>
+						))}
 					</ul>
 				</div>
 			</nav>
