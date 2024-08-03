@@ -1,4 +1,6 @@
 import { useState } from "react";
+import BtnColor from "./BtnColor";
+import ShowNotes from "./ShowNotes";
 
 export default function NotePad() {
 	const [colors, setColors] = useState([
@@ -33,7 +35,6 @@ export default function NotePad() {
 						oldNote.push(newItem);
 						setNotes(oldNote);
 						e.target[0].value = "";
-						console.log(notes);
 					}
 				}}
 				action=""
@@ -44,17 +45,8 @@ export default function NotePad() {
 					className={`${choseColor} transition-all duration-300 shadow-lg shadow-black/50 rounded py-1 px-4 outline-none focus-visible:ring-4 w-full ring-blue-900/60`}
 				/>
 			</form>
-			<div className="flex gap-2 mt-5">
-				{colors.map((color) => (
-					<button
-						onClick={() => {
-							setChoseColor(color.clr);
-						}}
-						className={`${color.clr} rounded-[50%] ring-1 ring-slate-700/50 size-6`}
-						key={color.id}
-					></button>
-				))}
-			</div>
+			<BtnColor colors={colors} setChoseColor={setChoseColor} />
+			<ShowNotes notes={notes} setNotes={setNotes} />
 		</div>
 	);
 }
