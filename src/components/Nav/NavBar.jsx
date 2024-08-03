@@ -46,7 +46,7 @@ export default class NavBar extends Component {
 				{
 					address: "/note-pad",
 					title: "note pad",
-					id: 7,
+					id: 8,
 				},
 			],
 			isOpen: false
