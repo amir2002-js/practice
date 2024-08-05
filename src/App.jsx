@@ -7,8 +7,9 @@ import BookList from "./components/BookList/BookList";
 import Shop from "./components/shopping/Shop";
 import TodoList from "./components/TodList/TodoList";
 import NotePad from "./components/NotePad/NotePad";
-
+import AsyncAwait from "./components/Async&Await/AsyncAwait";
 export const App = () => {
+	AsyncAwait()
 	return (
 		<BrowserRouter>
 			<Routes>
