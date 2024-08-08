@@ -5,6 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      "vazir" : "vazir",
+      "vazir-bold" : "vazir-bold",
+      "vazir-light" : "vazir-light",
+    },
     container:{
       center : true, 
       padding: {
@@ -36,7 +41,11 @@ export default {
       maxWidth: "1300px",
       '100' : "400px"
     },
-    extend: {},
+    extend: {
+      dropShadow:{
+        "4xl" : "0 100px 10px 0 #ffffff"
+      }
+    },
   },
   plugins: [],
 }

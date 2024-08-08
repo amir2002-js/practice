@@ -48,6 +48,11 @@ export default class NavBar extends Component {
 					title: "note pad",
 					id: 8,
 				},
+				{
+					address: "/products",
+					title: "products",
+					id: 8,
+				},
 			],
 			isOpen: false
 		};

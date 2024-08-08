@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base{
+    @font-face {
+        font-family: "vazir";
+        src: url(../src/fonts/Vazir-FD-WOL.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "vazir-bold";
+        src: url(../src/fonts/Vazir-Bold-FD-WOL.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "vazir-light";
+        src: url(../src/fonts/Vazir-Light-FD-WOL.ttf) format("truetype");
+    }
+}
