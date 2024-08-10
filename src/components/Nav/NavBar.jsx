@@ -52,7 +52,7 @@ export default class NavBar extends Component {
 				{
 					address: "/products",
 					title: "products",
-					id: 8,
+					id: 9,
 				},
 			],
 			isOpen: false,
