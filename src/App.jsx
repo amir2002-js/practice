@@ -10,6 +10,7 @@ import TodoList from "./components/TodList/TodoList";
 import NotePad from "./components/NotePad/NotePad";
 import Products from "./components/Products/Products";
 import ShowProducts from "./components/Products/ShowProducts";
+import Dashboard from "./components/DashBoard/Dashboard";
 
 export const App = () => {
 	let users = AsyncAwait();
@@ -29,6 +30,7 @@ export const App = () => {
 					<Route path="products" element={<Products />} />
 					<Route path="products/:id" element={<ShowProducts />} />
 				</Route>
+				<Route path="/dashboard" element={<Dashboard />} />
 			</Routes>
 		</BrowserRouter>
 	);

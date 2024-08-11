@@ -7,8 +7,12 @@ export default {
   theme: {
     fontFamily: {
       "vazir" : "vazir",
+      "Varelmo" : "Varelmo",
+      "ABSTER" : "ABSTER",
       "vazir-bold" : "vazir-bold",
       "vazir-light" : "vazir-light",
+      "iransans" : "iransans",
+      "iransans-light" : "iransans-light",
     },
     container:{
       center : true, 

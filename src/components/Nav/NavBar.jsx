@@ -54,6 +54,11 @@ export default class NavBar extends Component {
 					title: "products",
 					id: 9,
 				},
+				{
+					address: "/dashboard",
+					title: "dashboard",
+					id: 10,
+				},
 			],
 			isOpen: false,
 		};

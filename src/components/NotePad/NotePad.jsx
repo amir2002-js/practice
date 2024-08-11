@@ -18,7 +18,7 @@ export default function NotePad() {
 	const [notes, setNotes] = useState([]);
 
 	return (
-		<div className="h-screen bg-slate-200 flex justify-center items-center flex-col">
+		<div className="min-h-screen pb-10 bg-slate-200 flex justify-center items-center flex-col">
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();

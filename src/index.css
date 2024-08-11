@@ -14,4 +14,20 @@
         font-family: "vazir-light";
         src: url(../src/fonts/Vazir-Light-FD-WOL.ttf) format("truetype");
     }
+    @font-face {
+        font-family: "iransans";
+        src: url(../src/fonts/iransansdnweb.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "iransans-light";
+        src: url(../src/fonts/iransansdnlight.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "Varelmo";
+        src: url(../src/fonts/Varelmo.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "ABSTER";
+        src: url(../src/fonts/ABSTER.otf) format("opentype");
+    }
 }
