@@ -7,7 +7,7 @@ import {
 
 export default function Navbar() {
 	return (
-		<div className="w-72 min-h-screen bg-slate-800 text-white">
+		<div className="w-64 min-h-screen bg-slate-800 text-white">
             <div className="px-3 pt-3 pb-6">
                 <button className="flex flex-row-reverse font-ABSTER text-3xl">
                     <p className="font-light">AMIR</p>
