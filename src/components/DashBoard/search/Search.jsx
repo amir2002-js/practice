@@ -2,7 +2,7 @@ import { LuBell, LuMail, LuSearch } from "react-icons/lu";
 
 export default function Search() {
 	return (
-		<div className="bg-slate-200 shadow flex w-full p-4 justify-between items-center px-10">
+		<div className="bg-slate-200 shadow flex w-full py-4 justify-between items-center px-10">
 			<form className="flex w-1/2">
 				<button>
 					<LuSearch className="text-xl" />
