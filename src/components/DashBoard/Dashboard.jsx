@@ -7,6 +7,7 @@ import NewCustomer from "./Datas/NewCustomer";
 import MainChart from "./MainChart/MainChart";
 import Barchart from "./Barchart/Barchart";
 import { varDailiesData, varData, varMothlyData, varYearlyData } from "./variable";
+import Memory from "./Memory/Memory";
 
 export default function Dashboard() {
 	const [data, setData] = useState(varData);
@@ -47,9 +48,12 @@ export default function Dashboard() {
 							active={active}
 						/>
 					</div>
-					<div className="">
-						<div className="mt-10">
+					<div className="mt-10 grid grid-cols-5 gap-10 items-center">
+						<div className="lg:col-span-3 col-span-5 ">
 							<Barchart data={yearlyData} />
+						</div>
+						<div className="lg:col-span-2 col-span-5">
+							<Memory data ={data}/>
 						</div>
 					</div>
 				</div>

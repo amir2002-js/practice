@@ -68,3 +68,9 @@ export const varYearlyData = [
     { name: "بهمن", درآمد: "210", pv: "210$", تعدادفروش: 213 },
     { name: "اسفند", درآمد: "220", pv: "220$", تعدادفروش: 236 },
 ]
+
+//memories use in Memory.js
+export const memory = [
+    { name: "حافظه برحسب گیگ", حافظه: 8000, pv: 24, amt: 2400 },
+    { name: "حافظه ذخیره برحسب گیگ", حافظه: 500, pv: 24, amt: 2400 }
+]
