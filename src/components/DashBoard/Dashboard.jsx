@@ -5,6 +5,7 @@ import Navbar from "./navbar/Navbar";
 import Search from "./search/Search";
 import NewCustomer from "./Datas/NewCustomer";
 import MainChart from "./MainChart/MainChart";
+import Barchart from "./Barchart/Barchart";
 
 export default function Dashboard() {
 	const [data1, setData1] = useState([
@@ -18,6 +19,22 @@ export default function Dashboard() {
 		{ name: "Page H", uv: 60, pv: 20, amt: 3000 },
 	]);
 
+	const [yearlyData , setYearlyData] = useState([
+		{ name: "فروردین", درآمد: "120", pv: "120$", تعدادفروش: 240 },
+		{ name: "اردیبهشت", درآمد: "100", pv: "100$", تعدادفروش: 191 },
+		{ name: "خرداد", درآمد: "135", pv: "135$", تعدادفروش: 212 },
+		{ name: "تیر", درآمد: "150", pv: "150$", تعدادفروش: 150 },
+		{ name: "مرداد", درآمد: "160", pv: "160$", تعدادفروش: 180 },
+		{ name: "شهریور", درآمد: "105", pv: "105$", تعدادفروش: 130 },
+		{ name: "مهر", درآمد: "156", pv: "156$", تعدادفروش: 253 },
+		{ name: "آبان", درآمد: "160", pv: "160$", تعدادفروش: 302 },
+		{ name: "آذر", درآمد: "110", pv: "110$", تعدادفروش: 212 },
+		{ name: "دی", درآمد: "259", pv: "259$", تعدادفروش: 242 },
+		{ name: "بهمن", درآمد: "210", pv: "210$", تعدادفروش: 213 },
+		{ name: "اسفند", درآمد: "220", pv: "220$", تعدادفروش: 236 },
+	]);
+	
+	
 	const [data2, setData2] = useState([
 		{ name: "بهمن 1", درآمد: "40", pv: "40$", amt: 2400 },
 		{ name: "بهمن 4", درآمد: "30", pv: "30$", amt: 2000 },
@@ -77,20 +94,7 @@ export default function Dashboard() {
 				{ name: "اسفند 1", درآمد: "70", pv: "70$", amt: 3000 },
 			]);
 		} else {
-			setData2([
-				{ name: "فروردین", درآمد: "120", pv: "120$", amt: 2400 },
-				{ name: "اردیبهشت", درآمد: "100", pv: "100$", amt: 2000 },
-				{ name: "خرداد", درآمد: "135", pv: "135$", amt: 2500 },
-				{ name: "تیر", درآمد: "150", pv: "150$", amt: 2600 },
-				{ name: "مرداد", درآمد: "160", pv: "160$", amt: 1800 },
-				{ name: "شهریور", درآمد: "105", pv: "105$", amt: 1300 },
-				{ name: "مهر", درآمد: "156", pv: "156$", amt: 2500 },
-				{ name: "آبان", درآمد: "160", pv: "160$", amt: 3000 },
-				{ name: "آذر", درآمد: "110", pv: "110$", amt: 3000 },
-				{ name: "دی", درآمد: "259", pv: "259$", amt: 3000 },
-				{ name: "بهمن", درآمد: "210", pv: "210$", amt: 3000 },
-				{ name: "اسفند", درآمد: "220", pv: "220$", amt: 3000 },
-			]);
+			setData2(yearlyData);
 		}
 	}, [active]);
 
@@ -113,6 +117,11 @@ export default function Dashboard() {
 							setActive={setActive}
 							active={active}
 						/>
+					</div>
+					<div className="">
+						<div className="mt-10">
+							<Barchart data={yearlyData} />
+						</div>
 					</div>
 				</div>
 			</div>
