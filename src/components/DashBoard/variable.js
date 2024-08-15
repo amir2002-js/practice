@@ -1,5 +1,5 @@
 // normal data for grow order and newCustomer
-export const data = [
+export const varData = [
 	{ name: "Page A", uv: 40, pv: 24, amt: 2400 },
 	{ name: "Page B", uv: 30, pv: 20, amt: 2000 },
 	{ name: "Page C", uv: 45, pv: 30, amt: 2500 },
@@ -11,7 +11,7 @@ export const data = [
 ];
 
 // dailies data
-export const dailiesData = [
+export const varDailiesData = [
 	{ name: "اسفند 00:00", درآمد: "0", pv: "0$", amt: 2400 },
 	{ name: "اسفند 01:00", درآمد: "0", pv: "0$", amt: 2000 },
 	{ name: "اسفند 02:00", درآمد: "0", pv: "0$", amt: 2500 },
@@ -39,7 +39,7 @@ export const dailiesData = [
 ];
 
 //mothly data
-export const mothlyData = [
+export const varMothlyData = [
 	{ name: "بهمن 1", درآمد: "40", pv: "40$", amt: 2400 },
 	{ name: "بهمن 4", درآمد: "30", pv: "30$", amt: 2000 },
 	{ name: "بهمن 7", درآمد: "45", pv: "45$", amt: 2500 },
@@ -54,7 +54,7 @@ export const mothlyData = [
 ];
 
 //yearly data
-export const yearlyData = [
+export const varYearlyData = [
     { name: "فروردین", درآمد: "120", pv: "120$", تعدادفروش: 240 },
     { name: "اردیبهشت", درآمد: "100", pv: "100$", تعدادفروش: 191 },
     { name: "خرداد", درآمد: "135", pv: "135$", تعدادفروش: 212 },
