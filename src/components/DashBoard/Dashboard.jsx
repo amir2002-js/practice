@@ -30,10 +30,14 @@ export default function Dashboard() {
 
 	return (
 		<div className="font-iransans-light text-sm flex" dir="rtl">
-			<div className="w-80">
+			{/*nav bar*/}
+			<div className="lg:w-72 w-16 ">
 				<Navbar />
 			</div>
-			<div className="w-full">
+
+			{/*body*/}
+			<div className="w-full ">
+				{/*search*/}
 				<Search />
 				<div className="container max-w-maxWidth">
 					<div className=" grid lg:grid-cols-3 grid-cols-1 gap-3 mt-5">
@@ -57,6 +61,11 @@ export default function Dashboard() {
 						</div>
 					</div>
 				</div>
+			<div className={`w-full border-t text-center border-gray-300 text-gray-500 p-3 mt-6`}>
+				<p>
+					تمامی حقوق محفوض است 2024@
+				</p>
+			</div>
 			</div>
 		</div>
 	);

@@ -1,7 +1,7 @@
-export default function ShowItems({ data }) {
+export default function ShowItems({ data , justIcon }) {
 	return (
 		<>
-			{data.map((part) =>
+			{justIcon == false ? data.map((part) =>
 				part.id == 1 ? (
 					<li
 						className="text-[10px] hover:text-blue-500 transition-all duration-300 -ms-3"
@@ -20,7 +20,18 @@ export default function ShowItems({ data }) {
 						</li>
 					</button>
 				)
-			)}
+			) :
+				data.map((part) => (
+					<button
+						className="hover:bg-slate-50/20 p-2 rounded truncate"
+						key={part.id}
+					>
+						<li className="flex justify-start items-center gap-3">
+							{part.icon}
+						</li>
+					</button>
+				))
+			}
 		</>
 	);
 }

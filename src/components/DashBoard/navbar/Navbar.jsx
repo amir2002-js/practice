@@ -46,7 +46,9 @@ export default function Navbar() {
 	});
 
 	return (
-		<div className="w-64 fixed h-[100vh] bg-slate-800 text-white overflow-y-auto scroll">
+		<div className="lg:w-64 w-16 fixed h-[100vh] bg-slate-800 text-white overflow-y-auto scroll">
+			{/*desktop nav*/}
+			<div className={`lg:block hidden`}>
 			<div className="px-3 pt-3 pb-6">
 				<button className="flex flex-row-reverse font-ABSTER text-3xl">
 					<p className="font-light">AMIR</p>
@@ -54,10 +56,18 @@ export default function Navbar() {
 				</button>
 			</div>
 			<ul className="flex flex-col gap-5 px-6 ">
-				<ShowItems data={parts.webpart1} />
-				<ShowItems data={parts.webpart2} />
-				<ShowItems data={parts.webpart3} />
+				<ShowItems data={parts.webpart1} justIcon={false}  />
+				<ShowItems data={parts.webpart2}  justIcon={false} />
+				<ShowItems data={parts.webpart3}  justIcon={false} />
 			</ul>
+			</div>
+			<div className={`lg:hidden text-white`}>
+				<ul className={`flex flex-col justify-center items-center`}>
+				<ShowItems data={parts.webpart1} justIcon={true} />
+				<ShowItems data={parts.webpart2} justIcon={true} />
+				<ShowItems data={parts.webpart3} justIcon={true} />
+				</ul>
+			</div>
 		</div>
 	);
 }

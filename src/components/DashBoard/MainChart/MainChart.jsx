@@ -12,8 +12,6 @@ import Btngroup from "./Btngroup";
 
 export default function MainChart({ data , setActive , active}) {
 
-
-
     function changeChartActive(newActive) {
         setActive(newActive);
     }

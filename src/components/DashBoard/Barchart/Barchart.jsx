@@ -2,7 +2,7 @@ import {
 	Bar,
 	BarChart,
 	CartesianGrid,
-	Legend,
+	Legend, ResponsiveContainer,
 	Tooltip,
 	XAxis,
 	YAxis,
@@ -14,8 +14,8 @@ export default function Barchart({ data }) {
 			<div className="m-5">
 				<p>تعداد فروش سالانه</p>
 			</div>
-			<div className="-ml-10">
-				<BarChart width={600} height={300} data={data}>
+			<div className=" w-full ">
+				<BarChart width={400} height={300} data={data}>
 					<CartesianGrid strokeDasharray="3 3" />
 					<XAxis dataKey="name" />
 					<YAxis />
@@ -24,11 +24,12 @@ export default function Barchart({ data }) {
 					<Bar
 						dataKey="تعدادفروش"
 						fill="#3b82f6"
-						barSize={25}
+						barSize={15}
 						radius={5}
 						background={{ radius: 5 }}
 					/>
 				</BarChart>
+
 			</div>
 		</div>
 	);
